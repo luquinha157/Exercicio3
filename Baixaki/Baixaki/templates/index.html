@@ -1,0 +1,298 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Permanent+Marker' %}" rel="stylesheet">
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+  <title>Test</title>
+</head>
+
+<style>
+body {
+  font-family: sans-serif;
+  background-color: #eeeeee;
+}
+
+.file-upload {
+  background-color: #ffffff;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #1FB264;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #1FB264;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #15824B;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+</style>
+
+<body ng-controller="demoController as vm">
+    <div id="mainPan">
+        <div id="topPan">
+          <h1>mauris eros, ornare nec, auctor quis, dignissim </h1>
+          <a href="{% static 'http://all-free-download.com/free-website-templates/"><img src="images/logo.jpg" alt="" width="102" height="91" border="0" align="left" class="logo" /></a>
+          <div id="topservicesPan">
+            <h2>all new services</h2>
+            <ul>
+              <li class="onelink"><a href="{% static 'http://all-free-download.com/free-website-templates/">Homepage</a></li>
+              <li class="onelink"><a href="{% static 'http://all-free-download.com/free-website-templates/">Mauris mauris</a></li>
+              <li class="threelink"><a href="{% static 'http://all-free-download.com/free-website-templates/">sornare nec auctor</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="leftPan">
+          <h2>About: <span>Us?</span></h2>
+          <p class="dateone"><span class="blue">l stephens</span><br />
+            <span class="white">Ntech blog</span><br />
+            maneging director</p>
+          <p class="buttomshadow">&nbsp;</p>
+          <p><span class="bold">NTech Blog is a free, tableless, W3C-compliant web design layout by Template World.</span>. This template has been tested and proven compatible with all major browser environments and operating systems. You are free to modify the design to suit your tastes in any way you like.</p>
+          <p>We only ask you to not remove "Design by Template World" and the link http://www.templateworld.com from the footer of the template.</p>
+          <p>If you are interested in seeing more of our free web template designs feel free to visit our website, Template World. We intend to add at least 25 new free templates in the coming month.</p>
+          <div id="leftlinkboxonePan">
+            <ul>
+              <li class="comments">Comments: <span class="boldtext">02</span></li>
+              <li class="continue"><a href="{% static 'http://all-free-download.com/free-website-templates/">Continue....</a></li>
+            </ul>
+          </div>
+          <p class="topshadow">&nbsp;</p>
+          <h3>Community: <span>how to modify?</span></h3>
+          <p class="datetwo"><span class="blue">M piterson</span><br />
+            <span class="white">Ntech blog</span><br />
+            maneging director</p>
+          <p class="buttomshadow">&nbsp;</p>
+          <p><span class="bold">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec quis Class aptent taciti lectarcu egestas luctus.</span> bus</p>
+          <p>tellus.faucibus aliquam. In faucibus aliquet velit. Vivamus eget mauris. mnec </p>
+          <p>Cras condimentum ullamcorper pede. Sed nec elitfaucibus aliquam vitaodio interdum vulputate. Aenean congue </p>
+          <div id="leftlinkboxtwoPan">
+            <ul>
+              <li class="comments">Comments: <span class="boldtext">02</span></li>
+              <li class="continue"><a href="{% static 'http://all-free-download.com/free-website-templates/">Continue....</a></li>
+            </ul>
+          </div>
+          <h4>Special tips:</h4>
+          <ul>
+            <li><a href="{% static 'http://all-free-download.com/free-website-templates/">Cras condimentum ullamcorper pede.</a></li>
+            <li><a href="{% static 'http://all-free-download.com/free-website-templates/">faucibus aliquam vitaodio interdum</a></li>
+            <li><a href="{% static 'http://all-free-download.com/free-website-templates/">Aenean congue</a></li>
+          </ul>
+          <p class="more"><a href="{% static 'http://all-free-download.com/free-website-templates/">more...</a></p>
+          <p class="topshadow">&nbsp;</p>
+          <h5>coordinating: <span>methods</span></h5>
+          <p class="datethree"><span class="blue">l joseph &amp; p thomas</span><br />
+            <span class="white">Ntech blog</span><br />
+            coordinator</p>
+          <p class="buttomshadow">&nbsp;</p>
+          <p><span class="bold">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</span></p>
+          <p>tellus.faucibus aliquam. In faucibus aliquet velit. Vivamus eget mauris. mnec </p>
+          <p>Cras condimentum ullamcorper pede. Sed nec elitfaucibus aliquam vitaodio interdum vulputate. Aenean congue </p>
+          <div id="leftlinkboxthreePan">
+            <ul>
+              <li class="comments">Comments: <span class="boldtext">12</span></li>
+              <li class="continue"><a href="{% static 'http://all-free-download.com/free-website-templates/">Continue....</a></li>
+            </ul>
+          </div>
+          <p class="buttomshadow">&nbsp;</p>
+        </div>
+        <div id="middlePan">
+          <h2>Publications<br />
+            <span>on july 2006</span></h2>
+          <div id="middleulPan">
+            <ul>
+              <li class="one">Lorem ipsum <br />
+                dolor sit amet, consectetuer adipiscing <br />
+                <span>09th june 2006</span></li>
+              <li class="two">Lorem ipsum <br />
+                dolor sit amet, consectetuer adipiscing <span><br />
+                09th june 2006</span></li>
+              <li class="three">Lorem ipsum <br />
+                dolor sit amet, consectetuer adipiscing <br />
+                <span>09th june 2006</span></li>
+              <li class="four">Lorem ipsum <br />
+                dolor sit amet, consectetuer adipiscing<br />
+                <span> 09th june 2006</span></li>
+              <li class="five">Lorem ipsum <br />
+                dolor sit amet, consectetuer adipiscing<br />
+                <span> 09th june 2006</span></li>
+            </ul>
+          </div>
+          <div id="middlecaptionPan">
+            <h3>for our<br />
+              <span>GOODWILL</span></h3>
+            <p>&quot;tellus.faucibus aliquam. In faucibus aliquet velit. Vivamus eget mauris. mnec Cras condimentum ullamcorper pede. Sed nec elitfaucibus aliquam&quot;</p>
+            <p align="right"><span>l stephens</span></p>
+          </div>
+        </div>
+        <div id="rightPan">
+          <ul>
+            <li><a href="http://all-free-download.com/free-website-templates/">Home</a></li>
+            <li><a href="http://all-free-download.com/free-website-templates/">About us</a></li>
+            <li><a href="http://all-free-download.com/free-website-templates/">Services</a></li>
+            <li><a href="http://all-free-download.com/free-website-templates/">Surpport</a></li>
+            <li><a href="http://all-free-download.com/free-website-templates/">Testimonials</a></li>
+            <li><a href="http://all-free-download.com/free-website-templates/">Clients</a></li>
+            <li class="contact"><a href="http://all-free-download.com/free-website-templates/">Contact </a></li>
+          </ul>
+          <h2>User Links</h2>
+          <ul class="userlink">
+            <li class="userlink"><a href="{% static 'http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit</a></li>
+            <li class="userlink"><a href="http://all-free-download.com/free-website-templates/' %}">amet, consectetuer</a></li>
+            <li class="userlink"><a href="http://all-free-download.com/free-website-templates/' %}">adipiscing elit. Donec</a></li>
+            <li class="userlink"><a href="http://all-free-download.com/free-website-templates/' %}">quis Class aptentlectarcu</a></li>
+            <li class="userlink"><a href="http://all-free-download.com/free-website-templates/' %}">egestas luctus. Nullam</a></li>
+            <li class="userlink"><a href="http://all-free-download.com/free-website-templates/' %}">dignissim tellus. Maur</a></li>
+            <li class="userlink"><a href="http://all-free-download.com/free-website-templates/' %}">orci nec leovelitlitfauci</a></li>
+            <li class="userlink"><a href="http://all-free-download.com/free-website-templates/' %}">bus</a></li>
+          </ul>
+          <form name="login" id="login" action="http://all-free-download.com/free-website-templates/' %}" method="post" class="position">
+            <h3>search</h3>
+            <input name="" type="text" />
+            <input name="" type="submit" class="button" value="Go" />
+          </form>
+        </div>
+      </div>
+      <div id="footermainPan">
+        <div id="footerPan">
+          <ul>
+            <li><a href="{% static 'http://all-free-download.com/free-website-templates/' %}">Home</a>|</li>
+            <li><a href="{% static 'http://all-free-download.com/free-website-templates/' %}">About</a> |</li>
+            <li><a href="{% static 'http://all-free-download.com/free-website-templates/' %}">Archives</a>|</li>
+            <li><a href="{% static 'http://all-free-download.com/free-website-templates/' %}">Support</a> |</li>
+            <li><a href="{% static 'http://all-free-download.com/free-website-templates/' %}">Contact</a></li>
+          </ul>
+          <p class="copyright">Nntechblog 2006 all right reaserved</p>
+          <a href="{% static 'http://all-free-download.com/free-website-templates/"><img src="images/footerlogo.jpg" title="Total Touch" alt="Total Touch" width="246" height="74" border="0" /></a>
+          <div id="footerPanhtml"><a href="{% static 'http://validator.w3.org/check?uri=referer">html</a></div>
+          <div id="footerPancss"><a href="{% static 'http://jigsaw.w3.org/css-validator/check/referer">css</a></div>
+          <ul class="templateworld">
+            <li>Design By:</li>
+            <li><a href="{% static 'http://www.templateworld.com">Template World</a></li>
+          </ul>
+        </div>
+      </div>
+      <div align=center>This template  downloaded form <a href="{% static 'http://all-free-download.com/free-website-templates/'>free website templates</a></div>
+    <script class="jsbin" src="{% static 'https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <div class="file-upload">
+      <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+    
+      <div class="image-upload-wrap">
+        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+        <div class="drag-text">
+          <h3>Drag and drop a file or select add Image</h3>
+        </div>
+      </div>
+      <div class="file-upload-content">
+        <img class="file-upload-image" src="#" alt="your image" />
+        <div class="image-title-wrap">
+          <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
